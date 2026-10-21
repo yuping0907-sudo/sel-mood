@@ -7,11 +7,13 @@ import {getAuth,signInAnonymously,onAuthStateChanged} from 'https://www.gstatic.
 import {getDatabase,ref,set,onValue} from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js';
 // 請將下方設定替換為 Firebase 專案「網頁應用程式」提供的設定值。
 const firebaseConfig = {
-  apiKey: 'AIzaSyBPB2Rotrl5yEi6jn1ONWxW9qpFrU79KCA',
-  authDomain: 'sel-mood-training.firebaseapp.com',
-  databaseURL: 'https://sel-mood-training-default-rtdb.asia-southeast1.firebasedatabase.app',
-  projectId: 'sel-mood-training',
-  appId: '1:13929007276:web:676a5b5814f3fd09a9b709'
+  apiKey: "AIzaSyBPB2Rotrl5yEi6jn1ONWxW9qpFrU79KCA",
+  authDomain: "sel-mood-training.firebaseapp.com",
+  databaseURL: "https://sel-mood-training-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "sel-mood-training",
+  storageBucket: "sel-mood-training.firebasestorage.app",
+  messagingSenderId: "13929007276",
+  appId: "1:13929007276:web:676a5b5814f3fd09a9b709"
 };
 const moods=[{id:'anxious',label:'焦慮',emoji:'😰',hint:'高活力・不舒服',color:'red'},{id:'happy',label:'開心',emoji:'😄',hint:'高活力・舒服',color:'yellow'},{id:'sad',label:'難過',emoji:'😢',hint:'低活力・不舒服',color:'blue'},{id:'calm',label:'平靜',emoji:'😌',hint:'低活力・舒服',color:'green'}];
 const params=new URLSearchParams(location.search);const isPresenter=params.get('view')==='results';const room=(params.get('room')||'return-training-2026').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,60)||'return-training-2026';
